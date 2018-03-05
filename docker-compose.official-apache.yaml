@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  
+  apache:
+    build:
+      dockerfile: official-apache/Dockerfile
+      context: .
+    ports:
+      - "80:80"
+    volumes:
+      - "./official-apache/000-default.conf:/etc/apache2/sites-enabled/000-default.conf"
+      - "./symfony_skeleton:/var/www:cached"

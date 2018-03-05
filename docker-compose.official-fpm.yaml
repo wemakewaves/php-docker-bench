@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  
+  fpm:
+    image: php:7-fpm
+    volumes:
+      - "./symfony_skeleton:/var/www:cached"
+
+  nginx:
+    image: nginx:stable
+    ports:
+      - "80:80"
+    volumes:
+      - "./official-fpm/nginx.conf:/etc/nginx/nginx.conf"
+      - "./symfony_skeleton:/var/www:cached"
