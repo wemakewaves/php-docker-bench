@@ -7,8 +7,13 @@ To run this, you need to have installed:
  * docker-compose
  * siege
 
-then you can run:
+To install the basic Symfony skeleton app
 
+```
+make install
+```
+
+Then to run all the benchmarks with default settings
 ```
 make bench_all
 ```
